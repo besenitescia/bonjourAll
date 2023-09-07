@@ -1,0 +1,30 @@
+﻿@page
+@model Bonjour.Pages.PersonnesModel
+@{
+}
+
+<div>
+    <h1>Toutes les personnes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Date de naissance</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pers in Model.pViewModel.personnes)
+            {
+                <tr>
+                    <td>@pers.Id</td>
+                    <td>@pers.lastname</td>
+                    <td>@pers.firstname</td>
+                    <td>@pers.birthdate.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
